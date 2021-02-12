@@ -4,6 +4,8 @@ provider "azurerm" {
     # If you're using version 1.x, the "features" block is not allowed.
     version = "~>2.0"
     features {}
+    subscription_id = "377bad0d-2f11-42a6-8172-bc5fe712900e"
+    tenant_id       = "e90616ce-66a9-4e0f-a46a-b2faa7371dcd"
 }
 
 # Create a resource group if it doesn't exist
