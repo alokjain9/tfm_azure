@@ -37,7 +37,7 @@ resource "azurerm_public_ip" "myterraformpublicip" {
 }
 
 resource "azurerm_network_interface" "main" {
-  name                = "interac-nic1"
+  name                = "interac-nic2"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
 
