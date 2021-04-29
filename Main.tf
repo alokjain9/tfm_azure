@@ -1,8 +1,4 @@
-variable "prefix" {
-  description = "env name"
-  type        = string
-  sensitive = true
-}
+
 provider "azuread" {
   # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
   #version = "=1.4.0"
@@ -20,12 +16,12 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "main" {
-  name     = "${var.prefix}-resources"
+  name     = "interac-resources"
   location = var.location
 }
 
 resource "azurerm_virtual_network" "main" {
-  name                = "${var.prefix}-network"
+  name                = "interac-network"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
@@ -39,14 +35,14 @@ resource "azurerm_subnet" "internal" {
 }
 
 #resource "azurerm_public_ip" "pip" {
- # name                = "${var.prefix}-pip"
- # resource_group_name = azurerm_resource_group.main.name
-  #location            = azurerm_resource_group.main.location
-  #allocation_method   = "Dynamic"
-#}
+  name                = "interac-pip"
+  resource_group_name = azurerm_resource_group.main.name
+  location            = azurerm_resource_group.main.location
+  allocation_method   = "Dynamic"
+}
 
 resource "azurerm_network_interface" "main" {
-  name                = "${var.prefix}-nic1"
+  name                = "interac-nic1"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
 
@@ -59,7 +55,7 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azurerm_network_interface" "internal" {
-  name                      = "${var.prefix}-nic2"
+  name                      = "interac-nic2"
   resource_group_name       = azurerm_resource_group.main.name
   location                  = azurerm_resource_group.main.location
 
@@ -93,7 +89,7 @@ resource "azurerm_network_interface_security_group_association" "main" {
 }
 
 resource "azurerm_linux_virtual_machine" "main" {
-  name                            = "${var.prefix}-vm"
+  name                            = "interac-vm"
   resource_group_name             = azurerm_resource_group.main.name
   location                        = azurerm_resource_group.main.location
   size                            = "Standard_F2"
