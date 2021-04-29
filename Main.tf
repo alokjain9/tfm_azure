@@ -9,8 +9,8 @@ provider "azuread" {
 }
 
 provider "azurerm" {
-  subscription_id = “37dda7fc-3b29-4ef5-9f12-f4815d036bfd”
-  tenant_id = “e3352582-d8e6-46e7-bed2-375795d5d764”
+  subscription_id = "37dda7fc-3b29-4ef5-9f12-f4815d036bfd"
+  tenant_id = "e3352582-d8e6-46e7-bed2-375795d5d764"
   features {}
 }
 
