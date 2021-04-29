@@ -35,7 +35,7 @@ resource "azurerm_subnet" "internal" {
 }
 
 resource "azurerm_public_ip" "pip" {
-  name                = "interac-pip"
+  name                = "myPublicIP"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
   allocation_method   = "Dynamic"
