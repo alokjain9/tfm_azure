@@ -1,17 +1,12 @@
 
-provider "azuread" {
-  # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
-  #version = "=1.4.0"
 
-  subscription_id = "37dda7fc-3b29-4ef5-9f12-f4815d036bfd"
-  client_id       = "eacfbfab-3951-4fa2-8cfd-e9ce11201646"
-  client_secret   = "4mwqUcoj8tGl~f6ENcskt7Nc668gDBpej~"
-  tenant_id       = "e3352582-d8e6-46e7-bed2-375795d5d764"
-  # features {}
-}
 provider "azurerm" {
  # subscription_id = "37dda7fc-3b29-4ef5-9f12-f4815d036bfd"
   #tenant_id = "e3352582-d8e6-46e7-bed2-375795d5d764"
+    subscription_id = "37dda7fc-3b29-4ef5-9f12-f4815d036bfd"
+  client_id       = "eacfbfab-3951-4fa2-8cfd-e9ce11201646"
+  client_secret   = "4mwqUcoj8tGl~f6ENcskt7Nc668gDBpej~"
+  tenant_id       = "e3352582-d8e6-46e7-bed2-375795d5d764"
   features {}
 }
 
