@@ -1,6 +1,6 @@
 provider "azuread" {
   # Whilst version is optional, we /strongly recommend/ using it to pin the version of the Provider being used
-  version = "=1.4.0"
+  #version = "=1.4.0"
 
   subscription_id = "37dda7fc-3b29-4ef5-9f12-f4815d036bfd"
   client_id       = "eacfbfab-3951-4fa2-8cfd-e9ce11201646"
