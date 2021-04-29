@@ -34,7 +34,7 @@ resource "azurerm_subnet" "internal" {
   address_prefixes     = ["10.0.2.0/24"]
 }
 
-#resource "azurerm_public_ip" "pip" {
+resource "azurerm_public_ip" "pip" {
   name                = "interac-pip"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
