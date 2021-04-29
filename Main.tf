@@ -38,12 +38,12 @@ resource "azurerm_subnet" "internal" {
   address_prefixes     = ["10.0.2.0/24"]
 }
 
-resource "azurerm_public_ip" "pip" {
-  name                = "${var.prefix}-pip"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  allocation_method   = "Dynamic"
-}
+#resource "azurerm_public_ip" "pip" {
+ # name                = "${var.prefix}-pip"
+ # resource_group_name = azurerm_resource_group.main.name
+  #location            = azurerm_resource_group.main.location
+  #allocation_method   = "Dynamic"
+#}
 
 resource "azurerm_network_interface" "main" {
   name                = "${var.prefix}-nic1"
